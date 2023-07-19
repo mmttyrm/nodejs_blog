@@ -26,6 +26,9 @@ app.get('/', (req, res) => {
 app.get('/new', (req, res) => {
     res.render('new');
 });
+app.get('/search', (req, res) => {
+    res.render('search');
+});
 
 //127.0.0.1 - localhost
 
