@@ -1,11 +1,12 @@
 const Courses = require('../models/Course');
-const { multipleMongooseToObject } = require('../../util/mongoose');
+
+const { mongooseToObject } = require('../../util/mongoose');
 class CourseController {
     //[GET/course/:slug]
     show(req, res, next) {
         Courses.findOne({ slug: req.params.slug })
             .then((course) => {
-                res.render('courses/show');
+                res.render('courses/show', { course: mongooseToObject(course) });
             })
             .catch(next);
     }
