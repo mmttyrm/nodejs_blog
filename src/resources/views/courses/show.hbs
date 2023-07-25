@@ -1,13 +1,20 @@
+
 <div class="mt-4">
     <div class="row">
         <div class="col-3">
-            <button class="" > Đăng ký</button>
+            <button class=""> Đăng ký</button>
+            <ul>
+                <li>Trình độ {{course.level}}</li>
+                <li>Lượt xem </li>
+            </ul>
         </div>
         <div class="col-8">
             <h2>{{course.name}}</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{course.videoid}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{course.videoid}}"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
             <p class="desc">{{course.description}}</p>
         </div>
-
     </div>
-</div>  
+</div>

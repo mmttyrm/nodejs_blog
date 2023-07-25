@@ -2,12 +2,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
-const Course = new Schema({
-    name: { type: String, maxLength: 255 },
-    description: { type: String, maxLength: 255 },
-    image: { type: String, maxLength: 255 },
-    createAt: { type: Date, default: Date.now },
-    updateAt: { type: Date, default: Date.now },
-});
+const Course = new Schema(
+  {
+    name: { type: String, require: true },
+    description: { type: String },
+    image: { type: String },
+    videoId: { type: String, require: true },
+    level: { type: String },
+  },
+  { timestamps: true }
+);
 
 module.exports = mongoose.model('Course', Course);
