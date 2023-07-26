@@ -28,6 +28,17 @@ class CourseController {
     course.save();
     res.send('Course Saved!!!');
   }
+
+  // [GET] /courses/:id/create
+  edit(req, res, next) {
+    Courses.findById(req.params.id)
+      .then((course) =>
+        res.render('courses/edit', {
+          course: mongooseToObject(course),
+        })
+      )
+      .catch(next);
+  }
 }
 
 module.exports = new CourseController();
