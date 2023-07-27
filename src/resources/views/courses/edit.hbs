@@ -1,6 +1,6 @@
 <div class="mt-4">
     <h3>Sửa khoá học</h3>
-    <form method="POST" action="/courses/{{course._id}}" >
+    <form method="POST" action="/courses/{{course._id}}?_method=PUT" >
         <div class="form-group mb-3">
             <label for="nameCourses" class="form-label"></label>Name Course</label>
             <input type="text" class="form-control" id="nameCourses" value="{{course.name}}" name="name">

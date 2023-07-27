@@ -39,6 +39,25 @@ class CourseController {
       )
       .catch(next);
   }
+
+  // [PUT] /courses/:id
+  update(req, res, next) {
+    Courses.updateOne(
+      { _id: req.params.id },
+      {
+        ...req.body,
+        image: `https://img.youtube.com/vi/${req.body.videoId}/sddefault.jpg`,
+      }
+    )
+      .then(() => res.redirect('/me/stored/courses'))
+      .catch(next);
+  }
+  // [DELETE] /courses/:id
+  destroy(req, res, next) {
+    Courses.deleteOne({ _id: req.params.id })
+      .then(() => res.redirect('back'))
+      .catch(next);
+  }
 }
 
 module.exports = new CourseController();
