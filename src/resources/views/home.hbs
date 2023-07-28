@@ -2,8 +2,8 @@
     <div class="row">
 
         {{#each courses}}
-        <div class="col-sm-6 col-lg-4">
-            <div class="card mb-4" style="width: 18rem;">
+        <div class=" col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+            <div class="card mb-4 mx-auto" style="width: 18rem;">
                 <a href="/courses/{{this.slug}}">
                     <img src="{{this.image}}" class="card-img-top" alt="{{this.name}}">
                 </a>
@@ -21,5 +21,3 @@
         {{/each}}
     </div>
 </div>
-
-
