@@ -6,10 +6,14 @@ const { query } = require('express');
 class meController {
   // [GET] /me/stored/courses
   storedCourses(req, res, next) {
-    Courses.find({})
-      .then((courses) => {
+    Promise.all([
+      Courses.find({}),
+      Courses.countDocumentsWithDeleted({ deleted: true }),
+    ])
+      .then(([courses, countDeletedCount]) => {
         res.render('me/stored-courses', {
           courses: multipleMongooseToObject(courses),
+          countDeletedCount,
         });
       })
       .catch(next);

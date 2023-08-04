@@ -1,6 +1,8 @@
 <div class="mt-4">
     <div>
-        <a href="/me/stored/courses"> danh sách khoá học </a>
+        <a href="/me/stored/courses">
+            <i data-feather="corner-up-left"></i>
+            danh sách khoá học </a>
         <h3 class="mt-4">Khóa học đã xoá</h3>
     </div>
     <table class="table mt-4">
@@ -49,10 +51,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>Bạn chắc chắn muốn xoá khoá học này?</p>
+                <p>Hành động này không thể khôi phục. Bạn chắc chắn muốn xoá khoá học này?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" id="btn-delete-course" class="btn btn-danger">Xoá bỏ</button>
+                <button type="button" id="btn-delete-course" class="btn btn-danger">Xoá vĩnh viễn</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Huỷ</button>
             </div>
         </div>
@@ -62,7 +64,6 @@
 
 <form name="delete-course-form" method="POST"></form>
 <form name="restore-course-form" method="POST"></form>
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script>
     const exampleModal = document.getElementById('delete-confirm');
     var courseId;
@@ -76,9 +77,12 @@
             courseId = button.getAttribute('data-bs-id')
         })
     }
+
+    //delete btn click
     var btnDeleteCourse = document.getElementById('btn-delete-course')
     btnDeleteCourse.onclick = () => {
-        deleteForm.action = '/courses/' + courseId + '?_method=DELETE';
+        console.log(courseId)
+        deleteForm.action = '/courses/' + courseId + '/force?_method=DELETE';
         deleteForm.submit();
     }
 

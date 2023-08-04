@@ -3,6 +3,9 @@
 h1 {
     color:$red-color;
 } 
+a {
+    text-decoration: none;
+}
 .profile {
     
 }
@@ -12,4 +15,8 @@ h1 {
 }
 .full-name {
     color:  $red-color
+}
+.checkbox-select-all-option {
+    width: 200px;
+    margin: 0 16px;
 }
