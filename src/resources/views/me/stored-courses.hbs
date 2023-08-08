@@ -13,11 +13,9 @@
         </div>
 
         <select class="form-select form-select-sm checkbox-select-all-option" name="action"
-            aria-label="Default select example">
+            aria-label="Default select example" required>
             <option selected value="">-- Chọn hành động --</option>
-            <option value="delete">Xoá</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value='delete'>Xoá</option>
         </select>
 
         <button class="btn btn-sm btn-primary disabled check-all-submit-btn">Thực hiện</button>
@@ -135,9 +133,7 @@
         }
         else {
             checkAllSubmitBtn.addClass('disabled')
-        }
-    }
-    console.log(containerForm)
-
+        };
+    };
 
 </script>
